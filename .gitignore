@@ -1,0 +1,51 @@
+# Downloads directory - contains downloaded videos/audio
+downloads/
+
+# Log files
+*.log
+youtube-dl.log
+
+# Configuration files with potentially sensitive data
+config.json
+
+# Temporary files
+*.tmp
+*.temp
+*.part
+*.ytdl
+
+# Python cache (if using Python-based downloaders)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows specific
+desktop.ini
+
+# Node modules (if any)
+node_modules/
+
+# Backup files
+*.bak
+*.backup
