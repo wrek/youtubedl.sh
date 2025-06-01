@@ -1,31 +1,50 @@
-# youtubedl.sh
-Script to help automate and simplify youtube-dl
+# YouTube Downloader
 
-This script will download some of the more interesting things to me if I don't supply it with a new playlist link/code.
+A simple, all-in-one YouTube downloader that works on Windows with automatic WSL detection and fallbacks.
 
-When I find a playlist on YouTube I think I can learn something from, I'll archive the entire playlist into an archive for later reference.
-Usually I download entire channels by pasting the playlist code for they're "Play All" link.
+## Quick Start
 
-I do that like this:
-./youtubedl.sh [playlist code from url] 
-ie:
-./youtubedl.sh UUTiL1q9YbrVam5nP2xzFTWQ
+1. **Run the script**: `.\youtube-dl.ps1`
+2. **First time**: Choose "System Test" then "Setup/Install" if needed
+3. **Download**: Use the menu or command line options
 
-How to find the code:
-Go to the youtube channel page you're interested in.
->> https://www.youtube.com/user/Suspicious0bservers/videos
+## Usage
 
-Click on Videos
-Click on Play All
-The url is displayed: https://www.youtube.com/watch?v=ihNPcRxqlAA&list=UUTiL1q9YbrVam5nP2xzFTWQ&index=1
-You want the bit after "list=" and before the next "&". A clever person will set up the script to detect the list=* & portion.
+```powershell
+# Interactive menu (recommended)
+.\youtube-dl.ps1
 
-The script will then download the videos etc., to a location hard-coded in the script. It would be nice to have a config file to load these things from.
+# Command line usage
+.\youtube-dl.ps1 -Url "https://youtube.com/watch?v=..."
+.\youtube-dl.ps1 -Playlist "https://youtube.com/playlist?list=..."
+.\youtube-dl.ps1 -Channel "https://youtube.com/@channelname"
 
-This script allows me to download all videos for any playlist I supply OR it will update all of the hard-coded example playlists.
+# System management
+.\youtube-dl.ps1 -Test    # Check system status
+.\youtube-dl.ps1 -Setup   # Install dependencies
+.\youtube-dl.ps1 -Help    # Show help
+```
 
-Something I'd like to add is the ability to automatically save new playlists I send via command line into a file which it can then use to read new "defaults" to update.
-youtubedl.sh [newplaylistcode] = adds this playlist to the top of the list in the playlists.txt file then it loads the file as an array and downloads those lists.
-This way, I don't have to maintain anything.
+## How It Works
 
-So in the future, I hope this script will allow me a lot more configurability.
+The script automatically:
+
+- Detects WSL + Linux distributions (preferred)
+- Falls back to native Windows downloaders (yt-dlp/youtube-dl)
+- Installs dependencies as needed
+- Manages configuration in `config.json`
+
+## Setup
+
+The script handles setup automatically, but you can also:
+
+- Install WSL + Ubuntu manually from Microsoft Store
+- Install Python + `pip install yt-dlp`
+- Install Chocolatey + `choco install yt-dlp`
+
+## Files
+
+- `youtube-dl.ps1` - Main script (this is all you need!)
+- `config.json` - Settings (auto-created)
+
+That's it! No complex setup, no multiple files, just one script that does everything.

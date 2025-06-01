@@ -1,0 +1,14 @@
+{
+  "settings": {
+    "outputDir": "~/Downloads/YouTube",
+    "quality": "best",
+    "format": "mp4"
+  },
+  "channels": [
+    {
+      "name": "Example Channel",
+      "url": "https://youtube.com/@examplechannel",
+      "description": "Example channel for demonstration"
+    }
+  ]
+}
